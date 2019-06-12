@@ -1,8 +1,5 @@
 package com.local.ysf.Proxy.proxSsecurity.security;
 
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -36,9 +33,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable() .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) ;
-		http.formLogin();
-		http.authorizeRequests().antMatchers("/*").permitAll();
+		http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		//http.formLogin();
 		http.authorizeRequests()
 			.antMatchers(HttpMethod.POST, "/books/book")
 			.hasAuthority("ADMIN")

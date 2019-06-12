@@ -32,8 +32,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 	
 	
 	private AuthenticationManager authenticationManager;
-	@Autowired
-	private ObjectMapper objectMapper;
 	
 	public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
 		super();
