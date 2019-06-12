@@ -29,10 +29,10 @@ public class JWTAutorizationFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request , HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-		 response.addHeader("Access-Control-Allow-Origin", "*");
+		 //response.addHeader("Access-Control-Allow-Origin", "*");
 		 response.addHeader("Access-Control-Allow-Headers",
 		            		"Content-type , Origin , Accept ,X-Request-With,Access-Control-Request-Method,Access-Control-Request-Method ,Access-Control-Request-Headers ,authorization");
-		 response.addHeader("access-Control-Expose-Headers", "Access-Control-Allow-Origin , Access-Control-Allow-Credentaials , authorization");
+		 response.addHeader("access-Control-Expose-Headers", " Access-Control-Allow-Credentaials , authorization");
 		 
 		 if(request.getMethod().equals(HttpMethod.OPTIONS.toString()))
 			 response.setStatus(HttpServletResponse.SC_OK);
